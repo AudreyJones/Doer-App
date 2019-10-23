@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Accordion, Card, Button, Checkbox} from 'react-bootstrap';
+import {connect} from 'react-redux'
+import {Accordion, Card, Button, Form} from 'react-bootstrap';
+// import customToggle from './helpers/customToggle'
 
 class Skills extends Component {
     constructor() {
@@ -11,17 +13,19 @@ class Skills extends Component {
     render(){
         return (
             <div>
-            <h1>Skills Tab is here!</h1>
+                <Form>
             <Accordion>
                 <Card>
-                <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                        Warehouse
-                    </Accordion.Toggle>
+                    <Card.Header>
+                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                            Warehouse
+                        </Accordion.Toggle>
                     </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                    <Card.Body>Hello! I'm the body</Card.Body>
-                    </Accordion.Collapse>
+                        <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                        Body of Warehouses
+                    </Card.Body>
+                        </Accordion.Collapse>
                 </Card>
                 <Card>
                     <Card.Header>
@@ -64,6 +68,7 @@ class Skills extends Component {
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
+            </Form>
             </div>
         )
     }

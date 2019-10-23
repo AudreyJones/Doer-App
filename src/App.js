@@ -20,6 +20,7 @@ render() {
             <Image src={Laborocity} className="d-inline-block align-top" fluid />
           </Navbar.Brand>
       </Navbar>
+
     <div>
       <TabContainer>
         <Tabs defaultActiveKey="skills">
@@ -34,12 +35,13 @@ render() {
       </Tab>
         </Tabs>
       </TabContainer>
-      <Switch>  
+
+      {/* <Switch>   */}
         {/* <Route exact path="/skills" component={}/>
         <Route exact path="/equipment" component={}/>
         <Route exact path="/materials" component = {}/>
         */}
-      </Switch>
+      {/* </Switch> */}
     
     </div> 
     </Router>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import {Image, Navbar, Tabs, Tab, TabContainer} from 'react-bootstrap';
 
 class Equipment extends Component {
@@ -15,5 +16,6 @@ class Equipment extends Component {
     }
 
 }
-
 export default Equipment;
+
+// export default connect(mapStateToProps,{fetchMaterials, addMaterial})(Equipment);
