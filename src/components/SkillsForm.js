@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {Accordion, Card, Button, Form} from 'react-bootstrap';
+import {Accordion, Collapse, Card, Button, Form} from 'react-bootstrap';
 // import customToggle from './helpers/customToggle'
+  
 
-class Skills extends Component {
+
+class SkillsForm extends Component {
     constructor() {
         super();
         this.state = {
+            skills: []
 
         }
     }
+
     render(){
         return (
             <div>
@@ -17,20 +21,18 @@ class Skills extends Component {
             <Accordion>
                 <Card>
                     <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Warehouse
-                        </Accordion.Toggle>
+                        <Accordion.Toggle as={Form.Check} variant="link" eventKey="0" label="Warehouse"/>
                     </Card.Header>
                         <Accordion.Collapse eventKey="0">
                     <Card.Body>
-                        Body of Warehouses
+                        Warehouses Body
                     </Card.Body>
                         </Accordion.Collapse>
                 </Card>
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                        Hospitality
+                        <Accordion.Toggle as={Form.Check} variant="link" eventKey="1" label="Hospitality">
+                        
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
@@ -39,18 +41,21 @@ class Skills extends Component {
                 </Card>
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                        General Labor
+                    <Accordion.Toggle as={Form.Check} variant="link" eventKey="2" label="General Labor">
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="2">
-                    <Card.Body>Hello! I'm another body</Card.Body>
+                    <Card.Body>
+                        <Form>
+                            <p>Thing</p>
+                        </Form>
+                    </Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                        Office
+                    <Accordion.Toggle as={Form.Check} variant="link" eventKey="3" label="Office">
+                       
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="3">
@@ -59,8 +64,8 @@ class Skills extends Component {
                 </Card>
                 <Card>
                     <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                        iRelaunch
+                    <Accordion.Toggle as={Form.Check} variant="link" eventKey="4" label="iRelaunch">
+                    
                     </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="4">
@@ -75,4 +80,4 @@ class Skills extends Component {
 
 }
 
-export default Skills;
+export default SkillsForm;

@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import './App.css';
+
+import {BrowserRouter as Router} from 'react-router-dom';
 import {Image, Navbar, Tabs, Tab, TabContainer} from 'react-bootstrap';
 import Laborocity from './Laborocity.png';
-import './App.css';
-import Skills from './components/Skills';
+import SkillsForm from './components/SkillsForm';
 import Equipment from './components/Equipment';
 import Certifications from './components/Certifications';
 
@@ -25,7 +26,7 @@ render() {
       <TabContainer>
         <Tabs defaultActiveKey="skills">
       <Tab eventKey="skills" title="Skills">
-        <Skills/>
+        <SkillsForm/>
       </Tab>
       <Tab eventKey="equipment" title="Equipment">
         <Equipment/>

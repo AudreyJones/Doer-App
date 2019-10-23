@@ -11,7 +11,13 @@ class Equipment extends Component {
     }
     render(){
         return (
-            <h1>Equipment Tab is here!</h1>
+        <div>
+            {/* If state.skills is empty, then phrase should appear: "You currently have no skills to add equipment under. Please go back to the Skills tab to add some of your skills and interests." */}
+            <p>You currently have no skills to add equipment under.
+                <br/>
+                <br/>
+                Please go back to the Skills tab to add some of your skills and interests.</p>
+        </div>
         )
     }
 

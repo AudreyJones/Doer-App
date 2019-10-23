@@ -11,7 +11,12 @@ class Certifications extends Component {
     }
     render(){
         return (
-            <h1>Certifications Tab is here!</h1>
+            <div>
+            <p>You currently have no skills to add certifications under.
+                <br/>
+                <br/>
+                Please go back to the Skills tab to add some of your skills and interests.</p>
+            </div>
         )
     }
 

@@ -1,11 +1,11 @@
 export default function equipmentReducer(
     // YOUR MATERIALS REDUCER
 
-    state= {loading:false, materials:[], users:[]}, action) {
+    state= {loading:false, skills:[], equipment:[]}, action) {
         // console.log("materials reducer:", state)
         switch (action.type) {
             
-            case 'LOADING_MATERIALS':
+            case 'LOADING_SKILLS':
                 //console.log('Reducer: Loading_Materials')
                 // console.log("f")
                 return {...state, loading: true}
