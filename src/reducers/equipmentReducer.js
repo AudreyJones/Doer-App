@@ -1,28 +1,28 @@
 export default function equipmentReducer(
-    // YOUR MATERIALS REDUCER
+    // YOUR EQUIPMENT REDUCER
 
-    state= {loading:false, skills:[], equipment:[]}, action) {
-        // console.log("materials reducer:", state)
+    state= {loading:false, skills:[], equipment:[], certifications:[]}, action) {
+        // console.log("equipment reducer:", state)
         switch (action.type) {
             
-            case 'LOADING_SKILLS':
-                //console.log('Reducer: Loading_Materials')
+            case 'LOADING_EQUIPMENT':
+                //console.log('Reducer: Loading_Equipment')
                 // console.log("f")
                 return {...state, loading: true}
                 
-            case 'FETCHING_MATERIALS':
-                // state = {loading: false, materials: action.payload}
-                //console.log('Reducer: Fetching_Materials')
+            case 'FETCHING_EQUIPMENT':
+                // state = {loading: false, equipment: action.payload}
+                //console.log('Reducer: Fetching_Equipment')
                 // console.log("g")
-                const newState = {...state, materials: action.payload}
+                const newState = {...state, equipment: action.payload}
                 return newState
 
-            case 'ADD_MATERIAL':
+            case 'ADD_EQUIPMENT':
                 // debugger
-                console.log('Reducer: Add_Material')
+                console.log('Reducer: Add_Equipment')
                 // Using concat because we're making a new array that is a modified version of the original anyways 
-                const newMaterials = [...state.materials].concat(action.material)
-                return {...state, materials: newMaterials}
+                const newEquipment = [...state.equipment].concat(action.equipment)
+                return {...state, equipment: newEquipment}
                 
 
             default:

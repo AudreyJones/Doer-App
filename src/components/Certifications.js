@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {Image, Navbar, Tabs, Tab, TabContainer} from 'react-bootstrap';
+import {Container, Image, Navbar, Tabs, Tab, TabContainer} from 'react-bootstrap';
 
 class Certifications extends Component {
     constructor() {
@@ -12,10 +12,13 @@ class Certifications extends Component {
     render(){
         return (
             <div>
-            <p>You currently have no skills to add certifications under.
-                <br/>
-                <br/>
-                Please go back to the Skills tab to add some of your skills and interests.</p>
+            <br/>
+                <Container fluid>
+                    <p>You currently have no skills to add certifications under.
+                        <br/>
+                        <br/>
+                    Please go back to the Skills tab to add some of your skills and interests.</p>
+                </Container>
             </div>
         )
     }
