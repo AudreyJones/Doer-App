@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {Container, Image, Navbar, Tabs, Tab, TabContainer} from 'react-bootstrap';
+// import {connect} from 'react-redux'
+import {Container} from 'react-bootstrap';
 
 class Certifications extends Component {
     constructor() {

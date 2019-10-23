@@ -1,79 +1,89 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {Accordion, Collapse, Card, Button, Form} from 'react-bootstrap';
+
+import {Accordion, Card, Form} from 'react-bootstrap';
 // import customToggle from './helpers/customToggle'
   
 
 
 class SkillsForm extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             skills: []
 
         }
     }
 
+    componentDidMount() {
+        console.log("SkillsForm did mount")
+        console.log(this.props)
+    }
+
     render(){
+        
         return (
             <div>
                 <Form>
-            <Accordion>
-                <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Form.Check} variant="link" eventKey="0" label="Warehouse"/>
-                    </Card.Header>
+                <Accordion defaultActiveKey="0">
+                    const allSkills = this.props.skills.map(skill) => {
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">{`${skill}`}r</Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+                                        <Form.Group>
+                                            <Form.Check
+                                        type="checkbox"
+                                        id="default-checkbox"
+                                        label="Construction"
+                                    
+                                            />
+                                        </Form.Group>
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                        </Card>
+                    }
+                    {/* <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">General Labor</Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                        Warehouses Body
-                    </Card.Body>
+                            <Card.Body>
+                                <Form.Group>
+                                    <Form.Check
+                                    type="checkbox"
+                                    id="default-checkbox"
+                                    label="Construction"
+                                    
+                                    /> */}
+
+                                {/* </Form.Group>
+
+                                <Form.Group>
+                                <Form.Check
+                                type="checkbox"
+                                id="default-checkbox"
+                                label="Restoration"
+                                />
+                                </Form.Group>
+
+                                <Form.Group>
+                                <Form.Check
+                                type="checkbox"
+                                id="default-checkbox"
+                                label="Painting"
+                                />
+                                </Form.Group>
+                                   
+                                
+                            </Card.Body>
+                        </Accordion.Collapse> */}
+                    {/* </Card> */}
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="1">Office</Accordion.Toggle>
+                        <Accordion.Collapse eventKey="1">
+                        <Card.Body>Hello! I'm another body</Card.Body>
                         </Accordion.Collapse>
-                </Card>
-                <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Form.Check} variant="link" eventKey="1" label="Hospitality">
-                        
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="1">
-                    <Card.Body>Hello! I'm another body</Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Form.Check} variant="link" eventKey="2" label="General Labor">
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="2">
-                    <Card.Body>
-                        <Form>
-                            <p>Thing</p>
-                        </Form>
-                    </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Form.Check} variant="link" eventKey="3" label="Office">
-                       
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="3">
-                    <Card.Body>Hello! I'm another body</Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-                <Card>
-                    <Card.Header>
-                    <Accordion.Toggle as={Form.Check} variant="link" eventKey="4" label="iRelaunch">
-                    
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="4">
-                    <Card.Body>Hello! I'm another body</Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
-            </Form>
+                    </Card>
+                    </Accordion>
+                </Form>
             </div>
         )
     }

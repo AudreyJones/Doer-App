@@ -3,27 +3,17 @@ export function fetchSkills() {
         // console.log("Hitting fetchMaterials")
         // console.log("c")
         return (dispatch) => {
-            // First action sent immediately after promise is returned
-            dispatch({type: 'LOADING_SKILLS'})
-            return fetch('http://localhost:3001/skills')
-                .then(r => r.json())
-                .catch(error => console.log(error))
-            // Second action sent after promise is resolved
-                .then(materials => {
-                    dispatch({ type: 'FETCHING_SKILLS', payload: materials})
-                    // console.log("d")
-                })
+                    dispatch({ type: 'FETCHING_SKILLS', payload: ['Warehouse', 'Hospitality', 'General Labor', 'Office', 'iRelaunch']})
         }
-        // console.log("e")
-    }
+}
 
-    export const selectSkill = (skill) => {
+export const selectSkill = (skill) => {
         return (dispatch) => {
-            return 
+            dispatch({type: 'SELECTING_SKILL', payload: skill})
         }
-    }
+}
     
-    
+
     //  export const addMaterial = (material) => {
     //     //  debugger
     //     //  Destructuring: const ({name, brand, color, quantity, project_id} = {material})
@@ -56,6 +46,3 @@ export function fetchSkills() {
         //   .then(resp => resp.json())
         //   .then(console.log())
         // }
-        
-    
-    

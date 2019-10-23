@@ -1,19 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
-
 import {BrowserRouter as Router} from 'react-router-dom';
-import {Image, Navbar, Tabs, Tab, TabContainer} from 'react-bootstrap';
+
+import {Image, Navbar} from 'react-bootstrap';
 import Laborocity from './Laborocity.png';
-import SkillsForm from './components/SkillsForm';
-import Equipment from './components/Equipment';
-import Certifications from './components/Certifications';
+import DoerForm from './containers/DoerForm';
 
 class App extends Component {
   
-
 render() {
-  // console.log("App.js state:", this)
-  // debugger
+  console.log("App mounted")
   return (
     <Router>
       <Navbar bg="light">
@@ -21,30 +17,7 @@ render() {
             <Image src={Laborocity} className="d-inline-block align-top" fluid />
           </Navbar.Brand>
       </Navbar>
-
-    <div>
-      <TabContainer>
-        <Tabs defaultActiveKey="skills">
-      <Tab eventKey="skills" title="Skills">
-        <SkillsForm/>
-      </Tab>
-      <Tab eventKey="equipment" title="Equipment">
-        <Equipment/>
-      </Tab>
-      <Tab eventKey="certifications" title="Certifications">
-        <Certifications/>
-      </Tab>
-        </Tabs>
-      </TabContainer>
-
-      {/* <Switch>   */}
-        {/* <Route exact path="/skills" component={}/>
-        <Route exact path="/equipment" component={}/>
-        <Route exact path="/materials" component = {}/>
-        */}
-      {/* </Switch> */}
-    
-    </div> 
+      <DoerForm/>
     </Router>
   )
 }
