@@ -6,7 +6,7 @@ import SkillsForm from '../components/SkillsForm';
 import Equipment from '../components/Equipment';
 import Certifications from '../components/Certifications';
 
-import {fetchSkills, selectingSkill} from '../actions/skills';
+import {fetchSkills, selectSkill} from '../actions/skills';
   
 
 
@@ -14,19 +14,19 @@ class DoerForm extends Component {
     constructor() {
         super();
         this.state = {
-            skills: ['Warehouse', 'Hospitality', 'General Labor', 'Office', 'iRelaunch'],
+            skills: [],
             equipment: []
         }
     }
 
     componentDidMount() {
-      console.log("Doer did mount")
-      console.log(this.state)
-      console.log(`skills: ${this.state.skills}`)
-      // this.props.fetchSkills()
+      console.log("Doer state:", this.state)
+      this.props.fetchSkills()
+
     }
 
     render(){
+      console.log("DoerForm.js state:", this.state)
         return (
             <div>
               <TabContainer>
@@ -49,10 +49,10 @@ class DoerForm extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps of DoerForm: ", state)
+  console.log("mapStateToProps of DoerForm: ", state.skills.skills)
   return {
           skills: state.skills.skills
   }
 }
 
-export default connect(mapStateToProps, { fetchSkills })(DoerForm)
+export default connect(mapStateToProps, { fetchSkills, selectSkill })(DoerForm)

@@ -7,9 +7,13 @@ import Laborocity from './Laborocity.png';
 import DoerForm from './containers/DoerForm';
 
 class App extends Component {
+
+  componentDidMount(){
+    this.setState({...this.state, skills: ['Warehouse', 'Hospitality', 'General Labor', 'Office', 'iRelaunch']})
+  }
   
 render() {
-  console.log("App mounted")
+  console.log("App.js state:", this.state)
   return (
     <Router>
       <Navbar bg="light">
@@ -17,7 +21,7 @@ render() {
             <Image src={Laborocity} className="d-inline-block align-top" fluid />
           </Navbar.Brand>
       </Navbar>
-      <DoerForm/>
+      <DoerForm />
     </Router>
   )
 }
