@@ -4,16 +4,18 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 import {Image, Navbar} from 'react-bootstrap';
 import Laborocity from './Laborocity.png';
-import DoerForm from './containers/DoerForm';
+import AppContainer from './containers/AppContainer';
 
 class App extends Component {
 
   componentDidMount(){
-    this.setState({...this.state, skills: ['Warehouse', 'Hospitality', 'General Labor', 'Office', 'iRelaunch']})
+    fetch("http://localhost:3001/skills")
+    .then(res => res.json())
+    .then(skills => this.setState({skills}))
   }
   
 render() {
-  console.log("App.js state:", this.state)
+  console.log("App state:", this.state)
   return (
     <Router>
       <Navbar bg="light">
@@ -21,7 +23,9 @@ render() {
             <Image src={Laborocity} className="d-inline-block align-top" fluid />
           </Navbar.Brand>
       </Navbar>
-      <DoerForm />
+
+      <AppContainer />
+
     </Router>
   )
 }

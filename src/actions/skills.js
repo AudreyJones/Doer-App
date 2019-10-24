@@ -1,22 +1,25 @@
+
+
 export function fetchSkills() {
-    //  Your MATERIALS ACTION CREATOR
-        // console.log("Hitting fetchMaterials")
-        // console.log("c")
+    //  Your SKILLS ACTION CREATOR
+        console.log("Hitting fetchSkills")
+        // console.log("c")]
+        // debugger
         return (dispatch) => {
                     dispatch({ type: 'FETCHING_SKILLS', payload: ['Warehouse', 'Hospitality', 'General Labor', 'Office', 'iRelaunch']})
         }
 }
 
 export const selectSkill = (skill) => {
+    console.log("Hitting selectSkills")
         return (dispatch) => {
             dispatch({type: 'SELECTING_SKILL', payload: skill})
         }
 }
     
 
-    //  export const addMaterial = (material) => {
+    //  export const addSkill = (skill) => {
     //     //  debugger
-    //     //  Destructuring: const ({name, brand, color, quantity, project_id} = {material})
     //     return (dispatch) => {
     //         return fetch('http://localhost:3001/materials', {
     //             method: 'POST',
