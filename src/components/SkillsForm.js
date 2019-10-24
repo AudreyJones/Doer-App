@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {Accordion, Card, Form} from 'react-bootstrap';
+import {Accordion, Card, Form, Switch} from 'react-bootstrap';
 // import customToggle from './helpers/customToggle'
   
 
@@ -15,33 +15,31 @@ class SkillsForm extends Component {
     }
 
     componentDidMount() {
-        console.log("SkillsForm did mount")
-        console.log(this.props)
+        console.log("SkillsForm did mount; this.props.skills: ")
+        console.log(this.props.skills)
     }
 
     render(){
-        
         return (
             <div>
                 <Form>
                 <Accordion defaultActiveKey="0">
-                    const allSkills = this.props.skills.map(skill) => {
+                    {this.props.skills.map(skill => 
                         <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">{`${skill}`}r</Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
+                            {/* <Accordion.Toggle as={Switch} eventKey="0" label={skill}/> */}
+                                <Accordion.Collapse as={Switch} eventKey="0">
                                     <Card.Body>
                                         <Form.Group>
                                             <Form.Check
-                                        type="checkbox"
-                                        id="default-checkbox"
-                                        label="Construction"
-                                    
+                                                type="checkbox"
+                                                id="default-checkbox"
+                                                label={skill}
                                             />
                                         </Form.Group>
                                     </Card.Body>
                                 </Accordion.Collapse>
                         </Card>
-                    }
+                    )}
                     {/* <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">General Labor</Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
