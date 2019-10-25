@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <Router>
       <div >
-      <Navbar sticky = "top">
+      <Navbar >
           <Navbar.Brand href="/skills"><Image src={Laborocity} className="d-inline-block align-top" fluid /> </Navbar.Brand>
             <Image src={BlueMenu}  width="50" height="50"  fluid/>
       </Navbar>
