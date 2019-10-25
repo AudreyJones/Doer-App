@@ -54,132 +54,89 @@ class SkillsForm extends Component {
                 {/* {allSkills.map(skill =>   */}
                     <Accordion>
                         
-                                <CustomToggle eventKey="0" children="Warehouse">
-                                    {/* <Accordion.Collapse eventKey="0">
+                                <CustomToggle eventKey="0" children="Warehouse"> Warehouse
+                                    <Accordion.Collapse eventKey="0">
                                         <Card.Body>
                                             Body
                                         </Card.Body>
-                                    </Accordion.Collapse> */}
+                                    </Accordion.Collapse>
                                 </CustomToggle>
                                 
                             
-                                <CustomToggle eventKey="1" children="Hospitality" />
-                                    {/* <Accordion.Collapse eventKey="1">
+                                <CustomToggle eventKey="1" children="Hospitality" > Hospitality
+                                    <Accordion.Collapse eventKey="1">
                                         <Card.Body>
                                             Body
                                         </Card.Body>
-                                    </Accordion.Collapse> */}
+                                    </Accordion.Collapse>
+                                </CustomToggle>
 
-                                <CustomToggle eventKey="2" children="General Labor"/>
+                                <CustomToggle eventKey="2" children="General Labor" > General Labor
+                                    <Accordion.Collapse eventKey="2">
+                                        <Card.Body>
+                                        <Form>
                                     
-                                    
-                                
+                                            <Form.Group>
+                                                <Form.Row>
+                                                    <Col>
+                                                        <Form.Check id="Restoration" label="Restoration" value="Restoration"/>
+                                                    </Col>
+                                                    <Col>
+                                                        My Experience: {} years
+                                                    </Col> 
+                                                </Form.Row>
+                                                <Slider
+                                                    defaultValue={0}
+                                                />
+                                            </Form.Group>
 
-                                <CustomToggle eventKey="3" children="Office" />
-                                    
-                               
-                        
+                                            <Form.Group>
+                                                <Form.Row>
+                                                    <Col>
+                                                        <Form.Check id="Construction" label="Construction" value="Construction"/>
+                                                    </Col>
+                                                    <Col>
+                                                        My Experience: {} years
+                                                    </Col>
+                                                </Form.Row>
+                                                <Slider
+                                                    defaultValue={0}
+                                                />
+                                            </Form.Group>
 
-                        {/* <Card> */}
-                            {/* <Card.Header>
+                                            <Form.Group>
+                                                <Form.Row>
+                                                    <Col>
+                                                        <Form.Check id="Painting" label="Painting" value="Painting"/>
+                                                    </Col>
+                                                    <Col>
+                                                        My Experience: {} years
+                                                    </Col>
+                                                </Form.Row>
+                                                <Slider
+                                                    defaultValue={0}
+                                                />
+                                            </Form.Group>
+                                        </Form> 
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </CustomToggle>
 
-                            <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                                Hospitality
-                            </Accordion.Toggle>
+                                <CustomToggle eventKey="3" children="Office" > Office
+                                    <Accordion.Collapse eventKey="3">
+                                        <Card.Body>
+                                            Body
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </CustomToggle>
 
-                            </Card.Header>
-
-                            <Accordion.Collapse eventKey="1">
-
-                            <Card.Body>
-                                Body
-                            </Card.Body>
-
-                            </Accordion.Collapse>
-
-                        </Card>
-
-                        <Card>
-                            <Card.Header> */}
-                            {/* <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                                General Labor
-                            </Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="2">
-                            <Card.Body>
-                                <Form>
-                                    
-                                    <Form.Group>
-                                        <Form.Row>
-                                            <Col>
-                                                <Form.Check id="Restoration" label="Restoration" value="Restoration"/>
-                                            </Col>
-                                            <Col>
-                                                My Experience: {} years
-                                            </Col> */}
-                                        {/* </Form.Row>
-                                        <Slider
-                                            defaultValue={0}
-                                        />
-                                    </Form.Group> */}
-
-                                    {/* <Form.Group>
-                                        <Form.Row>
-                                            <Col>
-                                                <Form.Check id="Construction" label="Construction" value="Construction"/>
-                                            </Col>
-                                            <Col>
-                                                My Experience: {} years
-                                            </Col>
-                                        </Form.Row>
-                                        <Slider
-                                            defaultValue={0}
-                                        />
-                                    </Form.Group>
-
-                                    <Form.Group>
-                                        <Form.Row>
-                                            <Col>
-                                                <Form.Check id="Painting" label="Painting" value="Painting"/>
-                                            </Col>
-                                            <Col>
-                                                My Experience: {} years
-                                            </Col>
-                                        </Form.Row>
-                                        <Slider
-                                            defaultValue={0}
-                                        />
-                                    </Form.Group> */}
-
-                                    
-                                {/* </Form>
-                            </Card.Body>
-                            </Accordion.Collapse>
-                        </Card> */}
-
-                        <Card>
-                            <Card.Header>
-                            <CustomToggle eventKey="3" children= "Office"/>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="3">
-                            <Card.Body>
-                                Body
-                            </Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-
-                        <Card>
-                            <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="4">
-                                iRelaunch
-                            </Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="4">
-                            <Card.Body>
-                                Body
-                            </Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
+                                <CustomToggle eventKey="4" children="iRelaunch" > iRelaunch
+                                    <Accordion.Collapse eventKey="4">
+                                        <Card.Body>
+                                            Body
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </CustomToggle>    
                     </Accordion>
                 
             </div>              
