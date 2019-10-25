@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchSkills, addSkill } from '../actions/skills'
-import {Accordion, Form, Col, Switch, Card, Image, Container, Row} from 'react-bootstrap';
+import {Accordion, AccordionToggle, Button, Form, Col, Switch, Card, Image, Container, Row} from 'react-bootstrap';
 import Slider from '@material-ui/core/Slider';
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import IdeasLogo from '../Ideas Logo.png'
 
 function CustomToggle({ children, eventKey }) {
     // debugger
-    const toggleOnClick = useAccordionToggle(eventKey, () =>
-        console.log(`${children}`)
-    );
-  
+    const handleClick = (event) => {
+        // debugger
+        // console.log("handleClick state: ", this.state)
+        // console.log("handleClick props: ", this.props)
+       return(
+        <Accordion>
+        <Accordion.Collapse eventKey="0">
+            <Card.Body>
+                Categories of {children}
+            </Card.Body>
+        </Accordion.Collapse>
+        </Accordion>
+        
+       )
+    }
+
     return (
     <Card>
         <Card.Header>
-            <div class="custom-control custom-switch" onClick={toggleOnClick}>
-                <input type="checkbox" class="custom-control-input" id={children} />
+            <div class="custom-control custom-switch" onClick={handleClick}>
+                <input type="checkbox" class="custom-control-input" id={children} onClick={handleClick}/>
                 <label class="custom-control-label" for={children}>{children}</label>
             </div>
         </Card.Header>
@@ -39,6 +51,23 @@ class SkillsForm extends Component {
         this.props.fetchSkills()
     }
 
+    // handleClick = (event, children) => {
+    //     debugger
+    //     return(
+    //     <Accordion.Collapse eventKey="1">
+    //        <Card.Body>
+    //           Body
+    //        </Card.Body>
+    //     </Accordion.Collapse>
+    //     )
+    //     // console.log("handleClick state: ", this.state)
+    //     // console.log("handleClick props: ", this.props)
+       
+    //     // this.setState({[event.target.name]: event.target.value})
+    // }
+
+    
+
     render(){
         console.log("SkillsForm state:", this.state)
         console.log("SkillsForm props:", this.props)
@@ -56,25 +85,31 @@ class SkillsForm extends Component {
                 </Container>
                 {/* {allSkills.map(skill =>   */}
                     <Accordion>
-                        
-                                <CustomToggle eventKey="0" children="Warehouse"> Warehouse
+                        {/* Trying to create a custom Toggle that, when triggered onClick, opens collapsed Accordion.Collapse and displays Sub-Category forms */}
+                       
+                                    <CustomToggle as={Button} eventKey="0" onClick={this.handleClick} children="Warehouse" equipment="Things">   
+                                            Warehouse
                                     <Accordion.Collapse eventKey="0">
                                         <Card.Body>
-                                            Body
+                                            Sub-categories of Warehouse work
                                         </Card.Body>
                                     </Accordion.Collapse>
-                                </CustomToggle>
-                                
-                            
-                                <CustomToggle eventKey="1" children="Hospitality" > Hospitality
-                                    <Accordion.Collapse eventKey="1">
+                                    </CustomToggle>
+                                        
+                                    
+                               
+                                <AccordionToggle as={Button} eventKey="1" children="Hospitality" onClick={this.onClick}>
+                                    Hospitality
+                                </AccordionToggle>
+                                <Accordion.Collapse eventKey="1" onClick={this.onClick}>
                                         <Card.Body>
                                             Body
                                         </Card.Body>
-                                    </Accordion.Collapse>
-                                </CustomToggle>
+                                </Accordion.Collapse>
+                                
 
-                                <CustomToggle eventKey="2" children="General Labor" > General Labor
+                                <AccordionToggle as={Button} eventKey="2" children="General Labor"> General Labor
+                                </AccordionToggle>
                                     <Accordion.Collapse eventKey="2">
                                         <Card.Body>
                                         <Form>
@@ -123,23 +158,25 @@ class SkillsForm extends Component {
                                         </Form> 
                                         </Card.Body>
                                     </Accordion.Collapse>
-                                </CustomToggle>
+                                
 
-                                <CustomToggle eventKey="3" children="Office" > Office
+                                <AccordionToggle as={Button} eventKey="3" children="Office" > Office
+                                </AccordionToggle>
                                     <Accordion.Collapse eventKey="3">
                                         <Card.Body>
                                             Body
                                         </Card.Body>
                                     </Accordion.Collapse>
-                                </CustomToggle>
+                                
 
-                                <CustomToggle eventKey="4" children="iRelaunch" > iRelaunch
+                                <AccordionToggle as={Button} eventKey="4" children="iRelaunch" > iRelaunch
+                                </AccordionToggle>
                                     <Accordion.Collapse eventKey="4">
                                         <Card.Body>
                                             Body
                                         </Card.Body>
                                     </Accordion.Collapse>
-                                </CustomToggle>    
+                                    
                     </Accordion>
                 
             </div>              

@@ -13,6 +13,7 @@ class Equipment extends Component {
         return (
         <div>
             <br/>
+            {/* Show empty equipment Tab message, unless a SubCategory's checkbox was changed, in which case state is updated and the subcategory's equipment formatted into cards with checkboxes here! */}
             <Container fluid>
                 <p>You currently have no skills to add equipment under.
                     <br/>

@@ -37,7 +37,7 @@ class App extends Component {
             <Image src={BlueMenu}  width="50" height="50"  fluid/>
       </Navbar>
 
-      {/* Modified 'Nav Tabs' to technically use tabs. Styling is misbehaving, so I chose to use simple Links and buttons, which look neater. */}
+      {/* Modified 'NavTabs' to technically use tabs. Styling is misbehaving, so I chose to use simple Links and buttons, which look neater. */}
       {/* <Nav>
         <NavTab to="/skills" activeStyle={{STYLING}}>Skills</NavTab>
         <NavTab to="/equipment">Equipment</NavTab>
