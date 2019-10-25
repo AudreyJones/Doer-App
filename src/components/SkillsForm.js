@@ -10,9 +10,9 @@ function CustomToggle({ children, eventKey }) {
     const toggleOnClick = useAccordionToggle(eventKey, () =>
     
         <Accordion.Collapse eventKey={eventKey}>
-                            <Card.Body>
-                                Body
-                            </Card.Body>
+            <Card.Body>
+                Body
+            </Card.Body>
         </Accordion.Collapse>
     );
   
@@ -20,8 +20,8 @@ function CustomToggle({ children, eventKey }) {
     <Card>
         <Card.Header>
             <div class="custom-control custom-switch" onClick={toggleOnClick}>
-                <input type="checkbox" class="custom-control-input" id="customSwitch1"/>
-                <label class="custom-control-label" for="customSwitch1">{children}</label>
+                <input type="checkbox" class="custom-control-input" id={children} />
+                <label class="custom-control-label" for={children}>{children}</label>
             </div>
         </Card.Header>
     </Card>
@@ -55,42 +55,53 @@ class SkillsForm extends Component {
                     <Accordion>
                         
                                 <CustomToggle eventKey="0" children="Warehouse">
-                                    
+                                    {/* <Accordion.Collapse eventKey="0">
+                                        <Card.Body>
+                                            Body
+                                        </Card.Body>
+                                    </Accordion.Collapse> */}
                                 </CustomToggle>
+                                
                             
-                                <CustomToggle eventKey="1" children="Hospitality">
-                                <Accordion.Collapse eventKey="1">
-                                    <Card.Body>
-                                        Body
-                                    </Card.Body>
-                                </Accordion.Collapse>
-                                </CustomToggle>
+                                <CustomToggle eventKey="1" children="Hospitality" />
+                                    {/* <Accordion.Collapse eventKey="1">
+                                        <Card.Body>
+                                            Body
+                                        </Card.Body>
+                                    </Accordion.Collapse> */}
 
-                                <CustomToggle eventKey="2" children="General Labor">
+                                <CustomToggle eventKey="2" children="General Labor"/>
                                     
-                                </CustomToggle>
+                                    
+                                
 
-                                <CustomToggle eventKey="3" children="Office">
+                                <CustomToggle eventKey="3" children="Office" />
                                     
-                                </CustomToggle>
+                               
                         
 
-                        <Card>
-                            <Card.Header>
+                        {/* <Card> */}
+                            {/* <Card.Header>
+
                             <Accordion.Toggle as={Button} variant="link" eventKey="1">
                                 Hospitality
                             </Accordion.Toggle>
+
                             </Card.Header>
+
                             <Accordion.Collapse eventKey="1">
+
                             <Card.Body>
                                 Body
                             </Card.Body>
+
                             </Accordion.Collapse>
+
                         </Card>
 
                         <Card>
-                            <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                            <Card.Header> */}
+                            {/* <Accordion.Toggle as={Button} variant="link" eventKey="2">
                                 General Labor
                             </Accordion.Toggle>
                             </Card.Header>
@@ -105,14 +116,14 @@ class SkillsForm extends Component {
                                             </Col>
                                             <Col>
                                                 My Experience: {} years
-                                            </Col>
-                                        </Form.Row>
+                                            </Col> */}
+                                        {/* </Form.Row>
                                         <Slider
                                             defaultValue={0}
                                         />
-                                    </Form.Group>
+                                    </Form.Group> */}
 
-                                    <Form.Group>
+                                    {/* <Form.Group>
                                         <Form.Row>
                                             <Col>
                                                 <Form.Check id="Construction" label="Construction" value="Construction"/>
@@ -138,19 +149,17 @@ class SkillsForm extends Component {
                                         <Slider
                                             defaultValue={0}
                                         />
-                                    </Form.Group>
+                                    </Form.Group> */}
 
                                     
-                                </Form>
+                                {/* </Form>
                             </Card.Body>
                             </Accordion.Collapse>
-                        </Card>
+                        </Card> */}
 
                         <Card>
                             <Card.Header>
-                            <Accordion.Toggle as={Button} variant="link" eventKey="3">
-                                Office
-                            </Accordion.Toggle>
+                            <CustomToggle eventKey="3" children= "Office"/>
                             </Card.Header>
                             <Accordion.Collapse eventKey="3">
                             <Card.Body>
