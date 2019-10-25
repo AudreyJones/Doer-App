@@ -17,7 +17,7 @@ import Certifications from '../components/Certifications';
 class AppContainer extends Component {
 
     componentDidMount() {
-      this.props.fetchSkills()
+      // this.props.fetchSkills()
 
     }
 
@@ -28,27 +28,7 @@ class AppContainer extends Component {
       
         return (
 
-           <div>
-          <Navbar bg="light">
-          <Navbar.Brand href="#home">
-            <Image src={Laborocity} className="d-inline-block align-top" fluid />
-          </Navbar.Brand>
-      
-              {/* <TabContainer>
-                <Tabs defaultActiveKey="skills">
-              <Tab eventKey="skills" title="Skills">
-                <SkillsForm />
-              </Tab>
-              <Tab eventKey="equipment" title="Equipment">
-                <Equipment/>
-              </Tab>
-              <Tab eventKey="certifications" title="Certifications">
-                <Certifications/>
-              </Tab>
-                </Tabs>
-              </TabContainer>
-              </Navbar>
-            </div>  */}
+  
             
         )
     }

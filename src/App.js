@@ -23,7 +23,7 @@ class App extends Component {
   
   render() {
   console.log("App state:", this.state)
-  console.log("App props:", this.props)
+  
 
     return (
       <Router>
@@ -51,11 +51,11 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps, App state: ", state)
+  console.log("mapStateToProps, App state: ", state) //state.skills is still loading
   // debugger
   return {
     // Naming the prop held by the App and what we're filling it with.
-          skills: state.skills.skills
+          all_skills: state.skills.skills
   }
 }
 

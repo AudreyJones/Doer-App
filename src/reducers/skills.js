@@ -2,7 +2,6 @@ export default function skillsReducer(
     // YOUR SKILLS REDUCER
 
     state= {loading:false, skills:[]}, action) {
-        console.log("skills reducer:", state)
         switch (action.type) {
             case 'LOADING_SKILLS':
                 console.log('REDUCER: Loading_Skills')
