@@ -9,12 +9,7 @@ import IdeasLogo from '../Ideas Logo.png'
 function CustomToggle({ children, eventKey }) {
     // debugger
     const toggleOnClick = useAccordionToggle(eventKey, () =>
-    
-        <Accordion.Collapse eventKey={eventKey}>
-            <Card.Body>
-                Body
-            </Card.Body>
-        </Accordion.Collapse>
+        console.log(`${children}`)
     );
   
     return (
