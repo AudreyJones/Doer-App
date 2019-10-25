@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 import {Container} from 'react-bootstrap';
 
 class Certifications extends Component {
-    constructor() {
-        super();
+    constructor(props){
+    super(props);
         this.state = {
+            name:'',
+            category_ids:[],
+            equipment: []
 
         }
     }

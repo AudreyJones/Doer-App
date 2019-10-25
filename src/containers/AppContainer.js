@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
+// import { Link } from 'react-router-dom'
 import {Tabs, Tab, TabContainer} from 'react-bootstrap';
+import {Image, Navbar} from 'react-bootstrap';
+import Laborocity from '../Laborocity.png';
+
 import { connect } from 'react-redux'
-import {fetchSkills, selectSkill} from '../actions/skills';
+import {fetchSkills, addSkill} from '../actions/skills';
 
 import SkillsForm from '../components/SkillsForm';
 import Equipment from '../components/Equipment';
 import Certifications from '../components/Certifications';
 
-
-  
-
-
-// import React, { Component } from 'react';
-// import { Link } from 'react-router-dom'
-// import { Container, Divider, Card } from 'semantic-ui-react'; //Style Components
-
-// // importing our Action creators and { connect } to mapState and Dispatch to Props!
-// import {fetchProjects, addProject} from '../actions/projects';
-// import { connect } from 'react-redux';
-
-// // Components to be rendered in or by an event:
-// import ProjectCard from '../components/ProjectCard';
-// import ProjectForm from '../components/ProjectForm';
+//Consider extrapolating, then importing SkillsCards and Equipment cards?
 
 
 class AppContainer extends Component {
@@ -35,9 +25,16 @@ class AppContainer extends Component {
       console.log("Loaded AppContainer")
       console.log("AppContainer.js state:", this.state)
       console.log("AppContainer.js props:", this.props)
+      
         return (
-            <div>
-              <TabContainer>
+
+           <div>
+          <Navbar bg="light">
+          <Navbar.Brand href="#home">
+            <Image src={Laborocity} className="d-inline-block align-top" fluid />
+          </Navbar.Brand>
+      
+              {/* <TabContainer>
                 <Tabs defaultActiveKey="skills">
               <Tab eventKey="skills" title="Skills">
                 <SkillsForm />
@@ -50,17 +47,21 @@ class AppContainer extends Component {
               </Tab>
                 </Tabs>
               </TabContainer>
-            </div> 
+              </Navbar>
+            </div>  */}
+            
         )
     }
 
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps state of AppContainer: ", state)
+  console.log("mapStateToProps, AppContainer state: ", state)
+  // debugger
   return {
+    // Naming the prop held by the AppContainer and what we're filling it with.
           skills: state.skills.skills
   }
 }
 
-export default connect(mapStateToProps, { fetchSkills, selectSkill })(AppContainer)
+export default connect(mapStateToProps, { fetchSkills, addSkill })(AppContainer)

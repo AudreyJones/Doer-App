@@ -1,27 +1,27 @@
 export default function skillsReducer(
     // YOUR SKILLS REDUCER
 
-    state= {loading:false, skills:[], equipment:[]}, action) {
-        // console.log("skills reducer:", state)
+    state= {loading:false, skills:[]}, action) {
+        console.log("skills reducer:", state)
         switch (action.type) {
             case 'LOADING_SKILLS':
-                console.log('Reducer: Loading_Skills')
+                console.log('REDUCER: Loading_Skills')
                 return {...state, loading: true}
                 
             case 'FETCHING_SKILLS':
                 // console.log(state = {loading: false, skills: action.payload})
-                console.log('Reducer: Fetching_Skills')
+                console.log('REDUCER: Fetching_Skills')
                 
-                const newState = {...state, skills: ['Warehouse', 'Hospitality', 'General Labor', 'Office', 'iRelaunch']}
-                console.log(newState)
+                const newState = {...state, skills: action.payload}
                 return newState
                 
             case 'ADD_SKILL':
-                console.log(state = {loading: false, skills: action.payload})
-                console.log('Reducer: Add_Skill')
-            
-                const updatedState = {...state, skills: action.payload}
-                return updatedState
+                debugger
+                // console.log(state = {loading: false, skills: action.payload})
+                console.log('REDUCER: Add_Skill')   
+                const newSkill = [...state.skills]
+                newSkill.push(action.newSkill)
+                return {...state, skills: newSkill }
 
             default:
                 return state

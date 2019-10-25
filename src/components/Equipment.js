@@ -14,7 +14,6 @@ class Equipment extends Component {
         <div>
             <br/>
             <Container fluid>
-            
                 <p>You currently have no skills to add equipment under.
                     <br/>
                     <br/>
