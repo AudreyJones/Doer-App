@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import './App.css';
 import {Image, Navbar} from 'react-bootstrap';
 import Laborocity from './Laborocity.png';
+import BlueMenu from './blue menu icon.png';
+
 import {connect} from 'react-redux'
 import { fetchSkills, addSkill } from './actions/skills'
 
@@ -28,11 +30,11 @@ class App extends Component {
     return (
       <Router>
       <div >
-      <Navbar bg="light">
-          <Navbar.Brand href="#home">
-            <Image src={Laborocity} className="d-inline-block align-top" fluid />
-          </Navbar.Brand>
+      <Navbar >
+          <Navbar.Brand href="/skills"><Image src={Laborocity} className="d-inline-block align-top" fluid /> </Navbar.Brand>
+            <Image src={BlueMenu}  width="50" height="50"  fluid/>
       </Navbar>
+
         <Link to="/skills"><button>Skills</button></Link>
         <Link to="/equipment"><button>Equipment</button></Link>
         <Link to="/certifications"><button>Certifications</button></Link>

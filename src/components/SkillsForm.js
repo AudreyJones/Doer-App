@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { fetchSkills, addSkill } from '../actions/skills'
-import {Accordion, Form, Col, Switch, Card, Button, Container} from 'react-bootstrap';
+import {Accordion, Form, Col, Switch, Card, Image, Container, Row} from 'react-bootstrap';
 import Slider from '@material-ui/core/Slider';
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import IdeasLogo from '../Ideas Logo.png'
 
 function CustomToggle({ children, eventKey }) {
     // debugger
@@ -51,6 +52,13 @@ class SkillsForm extends Component {
     
         return (
             <div> 
+                <Container>
+                    <Row>
+                        <Col xs={6} md={4}>
+                            <Image src={IdeasLogo} fluid/>
+                        </Col>
+                    </Row>
+                </Container>
                 {/* {allSkills.map(skill =>   */}
                     <Accordion>
                         
