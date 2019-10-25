@@ -8,7 +8,8 @@ import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 function CustomToggle({ children, eventKey }) {
     // debugger
     const toggleOnClick = useAccordionToggle(eventKey, () =>
-      <Accordion.Collapse eventKey={eventKey}>
+    
+        <Accordion.Collapse eventKey={eventKey}>
                             <Card.Body>
                                 Body
                             </Card.Body>
@@ -16,12 +17,14 @@ function CustomToggle({ children, eventKey }) {
     );
   
     return (
-      
-    <div class="custom-control custom-switch" onClick={toggleOnClick}>
-        <input type="checkbox" class="custom-control-input" id="customSwitch1"/>
-        <label class="custom-control-label" for="customSwitch1">{children}</label>
-    </div>
-        
+    <Card>
+        <Card.Header>
+            <div class="custom-control custom-switch" onClick={toggleOnClick}>
+                <input type="checkbox" class="custom-control-input" id="customSwitch1"/>
+                <label class="custom-control-label" for="customSwitch1">{children}</label>
+            </div>
+        </Card.Header>
+    </Card>
       
     );
   }
@@ -50,18 +53,27 @@ class SkillsForm extends Component {
             <div> 
                 {/* {allSkills.map(skill =>   */}
                     <Accordion>
-                        <Card>
-                            <Card.Header>
-                                <CustomToggle eventKey="0">
-                                    Warehouse
+                        
+                                <CustomToggle eventKey="0" children="Warehouse">
+                                    
                                 </CustomToggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-                                Body
-                            </Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
+                            
+                                <CustomToggle eventKey="1" children="Hospitality">
+                                <Accordion.Collapse eventKey="1">
+                                    <Card.Body>
+                                        Body
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                                </CustomToggle>
+
+                                <CustomToggle eventKey="2" children="General Labor">
+                                    
+                                </CustomToggle>
+
+                                <CustomToggle eventKey="3" children="Office">
+                                    
+                                </CustomToggle>
+                        
 
                         <Card>
                             <Card.Header>
