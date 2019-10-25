@@ -3,18 +3,12 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import './App.css';
 import {Image, Navbar} from 'react-bootstrap';
 import Laborocity from './Laborocity.png';
+import {connect} from 'react-redux'
+import { fetchSkills, addSkill } from './actions/skills'
 
-
-
-// import AppContainer from './containers/AppContainer';
-
-
-
-// importing our various Containers and Presentational components...
 import SkillsForm from './components/SkillsForm';
 import Equipment from './components/Equipment';
 import Certifications from './components/Certifications';
-
 
 
 
@@ -29,8 +23,9 @@ class App extends Component {
   
   render() {
   console.log("App state:", this.state)
+  console.log("App props:", this.props)
+
     return (
-   
       <Router>
       <div >
       <Navbar bg="light">
@@ -44,8 +39,6 @@ class App extends Component {
       
         
         <Switch>  
-          {/* <Route exact path="/materials/:id" component={MaterialShow}/>
-          <Route exact path="/projects/:id" component={ProjectShow}/> */}
           <Route exact path="/certifications" component = {Certifications}/>
           <Route exact path="/equipment" component = {Equipment}/>
           <Route exact path="/skills" component = {SkillsForm}/>
@@ -57,4 +50,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log("mapStateToProps, App state: ", state)
+  // debugger
+  return {
+    // Naming the prop held by the App and what we're filling it with.
+          skills: state.skills.skills
+  }
+}
+
+export default connect(mapStateToProps, { fetchSkills, addSkill })(App)
