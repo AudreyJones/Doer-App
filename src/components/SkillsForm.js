@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {skillsData} from './SkillsData'
 import { fetchSkills, addSkill } from '../actions/skills'
-import {Accordion, AccordionToggle, Button, Form, Col, Switch, Card, Image, Container, Row} from 'react-bootstrap';
+import {Accordion, AccordionToggle, Button, Form, Col, Card, Image, Container, Row} from 'react-bootstrap';
 import Slider from '@material-ui/core/Slider';
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+// import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import IdeasLogo from '../Ideas Logo.png'
+
 
 function CustomToggle({ children, eventKey }) {
     // debugger
@@ -42,7 +44,7 @@ class SkillsForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            skills:[]
+            // skills:[]
 
         }
     }
@@ -65,50 +67,66 @@ class SkillsForm extends Component {
        
     //     // this.setState({[event.target.name]: event.target.value})
     // }
-
+    //Tethers the object to this component?
+    skillsData = {skillsData}
+    renderCards = () => {
+        return skillsData.map(skill => {
+            // debugger      
+            return (
+                <Card>
+                    <Card.Body>{skill.name}</Card.Body>
+                </Card>
+            )
+            })
+    }
     
 
     render(){
         console.log("SkillsForm state:", this.state)
         console.log("SkillsForm props:", this.props)
+        console.log("skillsData: ", {skillsData})
 
-        // const allSkills = this.props;
+        
     
         return (
             <div> 
-                <Container>
+                {/* <Container>
                     <Row>
                         <Col xs={6} md={4}>
                             <Image src={IdeasLogo} fluid/>
                         </Col>
                     </Row>
-                </Container>
-                {/* {allSkills.map(skill =>   */}
-                    <Accordion>
+                </Container> */}
+                 
+                    {/* <Accordion> */}
                         {/* Trying to create a custom Toggle that, when triggered onClick, opens collapsed Accordion.Collapse and displays Sub-Category forms */}
+                        {this.renderCards()}
+                        
                        
                                     <CustomToggle as={Button} eventKey="0" onClick={this.handleClick} children="Warehouse" equipment="Things">   
-                                            Warehouse
+                                            {/* {skill.name}  */}
                                     <Accordion.Collapse eventKey="0">
                                         <Card.Body>
                                             Sub-categories of Warehouse work
                                         </Card.Body>
                                     </Accordion.Collapse>
                                     </CustomToggle>
+
+                        
                                         
                                     
                                
-                                <AccordionToggle as={Button} eventKey="1" children="Hospitality" onClick={this.onClick}>
+                                {/* <AccordionToggle as={Button} eventKey="1" children="Hospitality" onClick={this.onClick}>
                                     Hospitality
                                 </AccordionToggle>
                                 <Accordion.Collapse eventKey="1" onClick={this.onClick}>
                                         <Card.Body>
                                             Body
                                         </Card.Body>
-                                </Accordion.Collapse>
+                                </Accordion.Collapse> */}
                                 
 
-                                <AccordionToggle as={Button} eventKey="2" children="General Labor"> General Labor
+                                {/* <AccordionToggle as={Button} eventKey="2" children="General Labor"> General Labor
                                 </AccordionToggle>
                                     <Accordion.Collapse eventKey="2">
                                         <Card.Body>
@@ -157,28 +175,28 @@ class SkillsForm extends Component {
                                             </Form.Group>
                                         </Form> 
                                         </Card.Body>
-                                    </Accordion.Collapse>
+                                    </Accordion.Collapse> */}
                                 
 
-                                <AccordionToggle as={Button} eventKey="3" children="Office" > Office
+                                {/* <AccordionToggle as={Button} eventKey="3" children="Office" > Office
                                 </AccordionToggle>
                                     <Accordion.Collapse eventKey="3">
                                         <Card.Body>
                                             Body
                                         </Card.Body>
-                                    </Accordion.Collapse>
+                                    </Accordion.Collapse> */}
                                 
 
-                                <AccordionToggle as={Button} eventKey="4" children="iRelaunch" > iRelaunch
+                                {/* <AccordionToggle as={Button} eventKey="4" children="iRelaunch" > iRelaunch
                                 </AccordionToggle>
                                     <Accordion.Collapse eventKey="4">
                                         <Card.Body>
                                             Body
                                         </Card.Body>
-                                    </Accordion.Collapse>
-                                    
-                    </Accordion>
-                
+                                    </Accordion.Collapse> */}
+                        
+                    {/* </Accordion> */}
+                   
             </div>              
         )
     }
@@ -193,3 +211,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps,{fetchSkills, addSkill})(SkillsForm)
+// export default SkillsForm
