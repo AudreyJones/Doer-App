@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {skillsData} from './SkillsData'
 import { fetchSkills, addSkill } from '../actions/skills'
-import {Accordion, AccordionToggle, Button, Form, Col, Card, Image, Container, Row} from 'react-bootstrap';
+import {Accordion, AccordionToggle, Button, Form, Col, Card, Image, Container, Row, Switch} from 'react-bootstrap';
 import Slider from '@material-ui/core/Slider';
 // import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import IdeasLogo from '../Ideas Logo.png'
@@ -10,18 +10,19 @@ import IdeasLogo from '../Ideas Logo.png'
 
 function CustomToggle({ children, eventKey }) {
     // debugger
-    const handleClick = (event) => {
-        // debugger
+    const handleClick = (event, eventKey) => {
+        debugger //what is eventKey?
+        // console.log("toggled!")
         // console.log("handleClick state: ", this.state)
         // console.log("handleClick props: ", this.props)
        return(
-        <Accordion>
-        <Accordion.Collapse eventKey="0">
-            <Card.Body>
-                Categories of {children}
-            </Card.Body>
-        </Accordion.Collapse>
-        </Accordion>
+       <Accordion>
+                    <Accordion.Collapse eventKey={skill.name}>
+                        <Card.Body>
+                            things
+                        </Card.Body>
+                    </Accordion.Collapse>
+                    </Accordion>
         
        )
     }
@@ -29,7 +30,7 @@ function CustomToggle({ children, eventKey }) {
     return (
     <Card>
         <Card.Header>
-            <div class="custom-control custom-switch" onClick={handleClick}>
+            <div class="custom-control custom-switch" >
                 <input type="checkbox" class="custom-control-input" id={children} onClick={handleClick}/>
                 <label class="custom-control-label" for={children}>{children}</label>
             </div>
@@ -54,14 +55,17 @@ class SkillsForm extends Component {
     }
 
     // handleClick = (event, children) => {
-    //     debugger
-    //     return(
-    //     <Accordion.Collapse eventKey="1">
-    //        <Card.Body>
-    //           Body
-    //        </Card.Body>
-    //     </Accordion.Collapse>
-    //     )
+    //     console.log("clicked!")
+    //     // debugger
+    //     // return(
+    //     //     <Accordion>
+    //     //             <Accordion.Collapse eventKey={skill.name}>
+    //     //                 <Card.Body>
+    //     //                     things
+    //     //                 </Card.Body>
+    //     //             </Accordion.Collapse>
+    //     //             </Accordion>
+    //     // )
     //     // console.log("handleClick state: ", this.state)
     //     // console.log("handleClick props: ", this.props)
        
@@ -73,9 +77,17 @@ class SkillsForm extends Component {
         return skillsData.map(skill => {
             // debugger      
             return (
-                <Card>
-                    <Card.Body>{skill.name}</Card.Body>
-                </Card>
+
+                <CustomToggle eventKey={skill.name} children={skill.name} equipment="Things">   
+                                            {skill.name} 
+                    <Accordion>
+                    <Accordion.Collapse eventKey={skill.name}>
+                        <Card.Body>
+                            things
+                        </Card.Body>
+                    </Accordion.Collapse>
+                    </Accordion>
+                </CustomToggle>
             )
             })
     }
@@ -90,27 +102,20 @@ class SkillsForm extends Component {
     
         return (
             <div> 
-                {/* <Container>
+                <Container>
                     <Row>
                         <Col xs={6} md={4}>
                             <Image src={IdeasLogo} fluid/>
                         </Col>
                     </Row>
-                </Container> */}
+                </Container>
                  
-                    {/* <Accordion> */}
+                    <Accordion>
                         {/* Trying to create a custom Toggle that, when triggered onClick, opens collapsed Accordion.Collapse and displays Sub-Category forms */}
                         {this.renderCards()}
                         
                        
-                                    <CustomToggle as={Button} eventKey="0" onClick={this.handleClick} children="Warehouse" equipment="Things">   
-                                            {/* {skill.name}  */}
-                                    <Accordion.Collapse eventKey="0">
-                                        <Card.Body>
-                                            Sub-categories of Warehouse work
-                                        </Card.Body>
-                                    </Accordion.Collapse>
-                                    </CustomToggle>
+                                    
 
                         
                                         
@@ -195,7 +200,7 @@ class SkillsForm extends Component {
                                         </Card.Body>
                                     </Accordion.Collapse> */}
                         
-                    {/* </Accordion> */}
+                    </Accordion>
                    
             </div>              
         )
