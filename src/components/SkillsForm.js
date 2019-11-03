@@ -8,6 +8,8 @@ import Slider from '@material-ui/core/Slider';
 import IdeasLogo from '../Ideas Logo.png'
 
 // Saving Check
+// SSH firewall interaction issues resolved. 
+// Next steps: import a better library for the components I need and style/interact with available front-end dummy data
 
 
 function CustomToggle({ children, eventKey }) {
